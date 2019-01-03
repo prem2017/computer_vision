@@ -1,0 +1,4 @@
+rgb_image,ground_truth_label
+input_file.png,segmented_file.png
+pp.png,none.png
+prem.png,none.png

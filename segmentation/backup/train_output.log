@@ -1,0 +1,38 @@
+
+DataLoader = <torch.utils.data.dataloader.DataLoader object at 0x1c26be59b0>
+Model = ConvNet(
+  (layer1): Sequential(
+    (0): Conv2d(3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU()
+    (2): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU()
+  )
+  (down_sample): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (layer2): Sequential(
+    (0): Conv2d(32, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU()
+  )
+  (up_sample): Upsample(scale_factor=2, mode=nearest)
+  (layer3): Conv2d(16, 2, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+)
+LossFucntion = SegmentationLoss(
+  (loss_func): CrossEntropyLoss()
+)
+Optimizer = Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.07
+    weight_decay: 0.0001
+)
+StartLR = 0.07, EndLR = 0.11
+NumEpochs = 80
+
+
+[Epoch Loss] = [0.70143, 393.324127, 0.617835, 0.651243, 0.575304, 0.534912, 0.490459, 0.504527, 0.456109, 0.428709, 0.501827, 0.438641, 0.313531, 0.364225, 0.475525, 0.446158, 0.496775, 0.34079, 23.764725, 0.472851, 0.365013, 0.486074, 0.443745, 0.29546, 0.22422, 0.247701, 0.366297, 0.401843, 0.249798, 0.316658, 0.508537, 0.280049, 0.249713, 0.201806, 0.22122, 0.173555, 0.123143, 0.433984, 0.449963, 0.374867, 0.421126, 0.221034, 0.16533, 0.279184, 0.178579, 0.142894, 0.114663, 0.451122, 99.953697, 0.254303, 0.273827, 0.464402, 0.349036, 0.316674, 0.805821, 3.808604, 0.401251, 12.165228, 0.324833, 0.517408, 2.629443, 0.345295, 0.27166, 0.227285, 0.180058, 0.257675, 0.02206, 0.931403, 0.280284, 0.270507, 0.227309, 0.391711, 0.305055, 0.323097, 0.450793, 0.325154, 0.30067, 0.29083, 0.471864, 0.373169]
+
+
+********************** Training Complete **********************
+
+

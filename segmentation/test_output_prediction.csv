@@ -1,0 +1,3 @@
+ImageName,PredictedProb_0,PredictedProb_1,true_lable
+rgb.png,0.0,1.0,1
+gt.png,1.0,0.0,0

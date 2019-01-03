@@ -1,0 +1,29 @@
+
+DataLoader = <torch.utils.data.dataloader.DataLoader object at 0x1c1b650588>
+Model = ConvNet(
+  (layer1): Sequential(
+    (0): Conv2d(3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU()
+    (2): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU()
+  )
+  (down_sample): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (layer2): Sequential(
+    (0): Conv2d(32, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU()
+  )
+  (layer3): Conv2d(16, 2, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+)
+LossFucntion = SegmentationLoss(
+  (loss_func): CrossEntropyLoss()
+)
+Optimizer = Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.007
+    weight_decay: 1e-09
+)
+StartLR = 0.007, EndLR = 0.011
+NumEpochs = 900
