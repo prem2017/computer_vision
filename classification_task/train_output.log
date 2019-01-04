@@ -1,5 +1,5 @@
 
-DataLoader = <torch.utils.data.dataloader.DataLoader object at 0x1c20af6240>
+DataLoader = <torch.utils.data.dataloader.DataLoader object at 0x1c259096d8>
 Model = ConvNet(
   (layer1): Sequential(
     (0): Conv2d(3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
@@ -12,16 +12,15 @@ Model = ConvNet(
     (0): Conv2d(32, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
     (1): ReLU()
   )
-  (up_sample): Upsample(scale_factor=2, mode=nearest)
   (layer3): Conv2d(16, 2, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
   (fc1): Sequential(
-    (0): Linear(in_features=131072, out_features=128, bias=True)
+    (0): Linear(in_features=32768, out_features=128, bias=True)
     (1): Dropout(p=0.5)
     (2): ReLU()
   )
   (fc2): Linear(in_features=128, out_features=2, bias=True)
 )
-LossFucntion = SegmentationLoss(
+LossFucntion = ClassificationLoss(
   (loss_func): CrossEntropyLoss()
 )
 Optimizer = Adam (
@@ -34,14 +33,3 @@ Parameter Group 0
 )
 StartLR = 0.0007, EndLR = 0.0011
 NumEpochs = 80
-
-
-Avg. Loss = 0.0 or Current LR = [0.00054] thus stopping training
-
-
-[Epoch Loss] = [0.678666, 1.897247, 0.261821, 3.255716, 1.246521, 0.554629, 0.546737, 0.66514, 0.813287, 0.428516, 0.19996, 0.153632, 0.120983, 0.33092, 0.029788, 0.013099, 0.002769, 0.000942, 0.000165, 2.3e-05, 5e-06, 0.000163, 0.000258, 0.000494, 0.000129, 0.000281, 0.000252, 2e-06, 0.495489, 1e-05, 0.361399, 5.5e-05, 0.000213, 0.0]
-
-
-********************** Training Complete **********************
-
-

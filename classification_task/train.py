@@ -208,7 +208,7 @@ def train_convnet(datatype_dir, img_list_fname):
 	# Rescale the image if it is big and then randomly crop as they still keep the type of data to detect
 	# Can also use <Rotation>, <Pixel-Shifting> for data augmentation
 	# TODO: Rescaling is OK but make sure that cropping is center
-	transformer = torch_transformer.Compose([RescaleImage((1.2 * util.HEIGHT_DEFAULT_VAL, 1.2 * util.WIDTH_DEFAULT_VAL)),
+	transformer = torch_transformer.Compose([RescaleImage((int(1.2 * util.HEIGHT_DEFAULT_VAL), int(1.2 * util.WIDTH_DEFAULT_VAL))),
 	                                         RandomCropImage((util.HEIGHT_DEFAULT_VAL, util.WIDTH_DEFAULT_VAL)),
 	                                         ToTensor(),
 	                                         NormalizeImageData()

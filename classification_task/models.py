@@ -13,19 +13,21 @@ class ConvNet(nn.Module):
 	"""ConvNet for classification"""
 	def __init__(self, num_classes=2, in_channels=3, width=256, height=256, dropout=0.5):
 		super(ConvNet, self).__init__()
+		self.accumulate_downsizing = 1
 		self.layer1 = nn.Sequential(
 			nn.Conv2d(in_channels=in_channels, out_channels=16, kernel_size=3, stride=1, padding=1),
 			nn.ReLU(),
 			nn.Conv2d(in_channels=16, out_channels=32, kernel_size=3, stride=1, padding=1),
 			nn.ReLU())
-		self.down_sample = nn.MaxPool2d(kernel_size=2, stride=2)
+		self.down_sample = nn.MaxPool2d(kernel_size=2, stride=2); self.accumulate_downsizing *= (2*2) # Kernel_size*stride
 		self.layer2 = nn.Sequential(
 			nn.Conv2d(in_channels=32, out_channels=16, kernel_size=3, stride=1, padding=1),
 			nn.ReLU())
 		self.layer3 = nn.Conv2d(in_channels=16, out_channels=2, kernel_size=5, stride=1, padding=2)
 		# output size WxHx2
+		fc1_units = int((width * height * 2) / self.accumulate_downsizing)
 		self.fc1 = nn.Sequential(
-			nn.Linear(width * height * 2, 128),
+			nn.Linear(fc1_units, 128),
 			nn.Dropout(p=dropout),
 			nn.ReLU())
 		self.fc2 = nn.Linear(128, num_classes)

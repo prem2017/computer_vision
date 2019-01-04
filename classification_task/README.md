@@ -50,7 +50,7 @@ The result of test data is saved in file <**test_output_prediction.csv**> which 
 
 #### TODO:
 1. Extend for multiclass classification
-2. More data augmentation
+2. More data augmentation such as rotation, pixel-shifting, adding random noise
 3. Use validation set for tuning hyperparameters of the model
 
 **Note-2**: Upload images for running the model
